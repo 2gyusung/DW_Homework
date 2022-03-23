@@ -59,11 +59,11 @@
           </div>
           <div class="menu">
             <img src="image/img_con06.jpg" />
-            <div class="menu-info">
+            <div class="menu-info" id="soldout" onclick="soldOrder()">
               <h6>참다랑어 스페셜 세트</h6>
               <p>숙성 : <span>5일 숙성</span></p>
               <p>가격 : <span>32,000</span></p>
-              <a id="soldout" onclick="soldOrder(this)" href="#" style="color: red">품절</a>
+              <a  href="#" style="color: red">품절</a>
             </div>
           </div>
         </div>
@@ -151,11 +151,11 @@
         
         //   5번 문제: 참다랑어 세트를 클릭하면 
         // '죄송합니다. 참다랑어 세트는 품절입니다.'라는 alert창 띄우기
-        function soldOrder() {
-        
-          alert($(soldOrder).attr('죄송합니다. 참다랑어 세트는 품절입니다.'))
-        }
       });
+      function soldOrder() {
+      
+        alert('죄송합니다. 참다랑어 세트는 품절입니다.');
+      }
 
     </script>
   </body>
