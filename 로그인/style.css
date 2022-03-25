@@ -41,7 +41,7 @@ body {
   border: none;
   outline: none;
 }
-
+/* txt 라벨 움직임 */
 .txt-field input:focus ~ label,
 .txt-field input:valid ~ label {
   top: -5px;

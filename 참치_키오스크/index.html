@@ -105,32 +105,37 @@
       주문하시겠습니까?' 라는 confirm창 띄우기
       */
             // 1번문제
-      function changeAll() {
-            $('#all-order').css('background-color','#ffffff')
-            $('#all-order').css('color','#4e4e4e')
-            $('#today-order').css('background-color','#c24040')
-            $('#today-order').css('color','#fff')
-            $('#best-order').css('background-color','#c24040')
-            $('#best-order').css('color','#fff')
-        }
-            // 1번문제
-        function changeToday() {
-            $('#all-order').css('background-color','#c24040')
-            $('#all-order').css('color','#fff')
-            $('#today-order').css('background-color','#ffffff')
-            $('#today-order').css('color','#4e4e4e')
-            $('#best-order').css('background-color','#c24040')
-            $('#best-order').css('color','#fff')
-        }
-            // 1번문제
-        function changeBest() {
-            $('#all-order').css('background-color','#c24040')
-            $('#all-order').css('color','#fff')
-            $('#today-order').css('background-color','#c24040')
-            $('#today-order').css('color','#fff')
-            $('#best-order').css('background-color','#ffffff')
-            $('#best-order').css('color','#4e4e4e')
-        }
+            // 설명을 통해 어느정도 이해 됐음
+            $(".nav li").on("click", function () {
+      $(".nav li").css('color', '#fff'), $(".nav li").css('background-color', '#c24040');
+      $(this).css('color', '#4e4e4e'), $(this).css('background-color', '#ffffff');
+    });
+      // function changeAll() {
+      //       $('#all-order').css('background-color','#ffffff')
+      //       $('#all-order').css('color','#4e4e4e')
+      //       $('#today-order').css('background-color','#c24040')
+      //       $('#today-order').css('color','#fff')
+      //       $('#best-order').css('background-color','#c24040')
+      //       $('#best-order').css('color','#fff')
+      //   }
+      //       // 1번문제
+      //   function changeToday() {
+      //       $('#all-order').css('background-color','#c24040')
+      //       $('#all-order').css('color','#fff')
+      //       $('#today-order').css('background-color','#ffffff')
+      //       $('#today-order').css('color','#4e4e4e')
+      //       $('#best-order').css('background-color','#c24040')
+      //       $('#best-order').css('color','#fff')
+      //   }
+      //       // 1번문제
+      //   function changeBest() {
+      //       $('#all-order').css('background-color','#c24040')
+      //       $('#all-order').css('color','#fff')
+      //       $('#today-order').css('background-color','#c24040')
+      //       $('#today-order').css('color','#fff')
+      //       $('#best-order').css('background-color','#ffffff')
+      //       $('#best-order').css('color','#4e4e4e')
+      //   }
             //2번 문제 메뉴 담기를 클릭하면 총 주문 금액에 가격 표기할 것
           // 단, 참다랑어 세트는 품절이기 때문에 총 주문 금액에 포함될 수 없다.
         
