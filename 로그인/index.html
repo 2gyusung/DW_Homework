@@ -12,18 +12,18 @@
       <h1>로그인</h1>
       <div class="login-form">
         <div class="txt-field">
-          <input type="text" required />
+          <input id="userId"  type="text" required onKeyDown="if(event.keyCode == 13) loginChk()"/>
           <label>아이디</label>
         </div>
         <div class="txt-field">
-          <input type="password" required />
+          <input id = "userWd"type="password" required onKeyDown="if(event.keyCode == 13) loginChk()" />
           <label>비밀번호</label>
         </div>
         <div class="pass">
           <label for="login-status">로그인 상태 유지</label>
           <input type="checkbox" id="login-status" value="stay" />
         </div>
-        <input class="login-btn" type="butten" value="로그인" />
+        <input class="login-btn"   type="butten" value="로그인" onclick="loginChk()"  />
         <div class="signup-link">회원이 아닌가요? <a href="#">회원가입</a></div>
       </div>
     </div>
@@ -37,13 +37,39 @@
       /* 
         1번 문제: 아이디와 비밀번호를 입력해야 로그인버튼을 눌렀을 때 
          '로그인 완료'라는 alert창 띄우기
-        
-        2번 문제: 아이디와 비밀번호에 공백을 제거 해야한다.
-        3번 문제: 아이디와 비밀번호는 30글자로 제한한다.
+         
+         
+         2번 문제: 아이디와 비밀번호에 공백을 제거 해야한다.
+         3번 문제: 아이디와 비밀번호는 30글자로 제한한다.
+         
         4번 문제: 아이디에 대문자를 입력하면 소문자로 변환해야 한다.
         5번 문제: 로그인 상태 유지를 누르면 
         '해당 브라우저에 로그인 정보를 저장하시겠습니까?' 라는 confirm창 띄우기
         */
+       
+       //trim() 문자열 함수이고 자바스크립트에 내장함수!
+       //input에 value를 불러올 때는 trim을 이용해서 공백제거 하자
+       
+
+      
+      // 1번 문제: 아이디와 비밀번호를 입력해야 로그인버튼을 눌렀을 때 
+      //    '로그인 완료'라는 alert창 띄우기
+      function loginChk() {
+    var form = document.f1;
+    if (!form.user_id.value) {
+        alert("아이디를 입력해 주십시오.");
+        form.user_id.focus();
+        return;
+    }
+ 
+    if (!form.passwd.value) {
+        alert("비밀번호를 입력해 주십시오.");
+        form.passwd.focus();
+        return;
+    }
+    form.action = "login_ok.php";
+    form.submit();
+}
     </script>
   </body>
 </html>
