@@ -19,6 +19,7 @@ a {
 .navbar {
   display: flex;
   justify-content: space-between;
+  /* 수직적인 배치 */
   align-items: center;
   background-color: #263343;
   padding: 8px 12px;
@@ -58,9 +59,10 @@ a {
   padding: 8px 12px;
 }
 .navbar_toogleBtn {
+  /*   display: none; :화면 작을 때만 보임 */
   display: none;
   position: absolute;
-  font:24px;
+  font-size:24px;
   color: #d49466;
   right: 32px;
 }
@@ -73,6 +75,7 @@ a {
     padding: 8px 24px;
   }
   .navbar_menu {
+    display: none;
     flex-direction: column;
     /*  */
     align-items: center;
@@ -84,8 +87,10 @@ a {
     text-align: center;
   }
   .navbar_icons{
+    display: none;
     justify-content: center;
     width: 100%;
+    color: var(--text-color);
   }
   .navbar_toogleBtn {
     /* 화면 조정할 때 메뉴바 보이게 하는 것 */
