@@ -11,10 +11,11 @@
     <div class="container">
       <div class="form-wrapper">
         <h3>스똬벅스 회원가입</h3>
-        <input type="" placeholder="회원이름을 입력해주세요..." />
-        <input type="" placeholder="사용할 닉네임을 입력해주세요..." />
+        <input id="name" type="" placeholder="회원이름을 입력해주세요..."  />
+        <input id="nickname" type="" placeholder="사용할 닉네임을 입력해주세요..."  />
+        
         <div class="email-box">
-          <input type="text" placeholder="이메일을 입력해주세요..." />
+          <input id="email" type="text" placeholder="이메일을 입력해주세요..." />
           <span>@</span>
           <select id="emailList">
             <option value="none" selected>직접입력</option>
@@ -24,9 +25,7 @@
             <option value="nate">nate.com</option>
           </select>
         </div>
-        <input id="
-        cellPhoneNumber"
-          type="text"
+        <input id="phone" type="text"
           placeholder="연락처를 입력해주세요...(번호만 입력하세요)"
         />
         <div class="question-box">
@@ -64,20 +63,12 @@
     //   문제 1. 
     //     회원가입 버튼 눌렀을 때, 빈칸 혹은 체크하지 못한 부분이 있다면
     //     '내용을 확인해주세요!'하는 alert을 보여주고 focus 하시오.
-        $('#btn').click(function() {
-            // button 누르게 되면 출력(되는지 확인)
-            console.log('hello world');
-            var starBucks = $('.form-wrapper').children () 
-                for(var i = 0; i<starBucks.length; i++) {
-                    var value = $("#" + starBucks[i].id).val();
-                    console.log(starBucks[i].id);
-                    if (value == '') {
-                        console.log('내용을 확인해주세요!');
-                        return false;
-                    }
-                }
-            
-        })
+    $('#btn').on('click', function(){
+        var inputBox = $('.form-wrapperinput')
+        // console.log(inputBox[2])
+          for(var i=0; i<inputBox.length; i++){
+           var signUpValue = $('#'+inputBox[i].id).val().trim();
+           console.log(inputBox[i].id)
     
 
 
@@ -86,11 +77,10 @@
     //     연락처에 '-'를 작성하면 회원가입 버튼을 눌렀을 때 제거하시오.
     //     ex) 010-4097-0823 -> 01040970823
     //  var regExp = /^\d{3}-\d{3,4}-\d{4}$/; 전화번호 정규표현식
-       function doCheckNumber (cellPhoneNumber) {
-            var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
-            var cellPhoneNumber= regExp.test(cellPhoneNumber);
-            return cellPhoneNumber;
-
+    function onlyNumber(phone2){
+         var regonlyNum = /^[0-9]/g;
+         var isPhone = regonlyNum.test(phone2)
+         return isPhone;
        }
        submitData();
 
