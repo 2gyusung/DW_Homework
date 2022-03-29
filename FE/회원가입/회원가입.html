@@ -87,6 +87,7 @@
         // 회원가입 버튼 눌렀을 때, 빈칸 혹은 체크하지 못한 부분이 있다면
         // '내용을 확인해주세요!'하는 alert을 보여주고 focus 하시오.
         $('#join').click(function() {
+          var jsonParam ={ };
             // input 관련 js  
   var formWrapper = $(".form-wrapper").children();
   console.log(formWrapper);
@@ -102,6 +103,22 @@
       return false;
     }
   }
+  if((formWrapper[i].id === 'userName' || formWrapper[i].id === 'nickname')
+  && elementValue.length >= 20){
+    alert('글자수 제한');
+    return false;
+  }
+  if((formWrapper[i].id === 'userName' || formWrapper[i].id === 'nickname')
+  )
+  if(formWrapper[i].id === 'phone') 
+
+  var email = $('#email').val().trim();
+  
+
+  jsonParam.email = email+'@'+emailCompany;
+  console.log('helloworld');s
+  doJoin(jsonParam);
+  )
 }
 
 });
