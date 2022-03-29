@@ -24,7 +24,7 @@
             <option value="nate">nate.com</option>
           </select>
         </div>
-        <input
+        <input id="phoneNumber"
           type="text"
           placeholder="연락처를 입력해주세요...(번호만 입력하세요)"
         />
@@ -33,7 +33,7 @@
           <input type="checkbox" />
         </div>
         <div class="join-btn">
-          <button type="button">회원 가입</button>
+          <button id = "btn" type="button">회원 가입</button>
         </div>
       </div>
     </div>
@@ -55,6 +55,52 @@
         모든 조건을 만족하고 회원가입 버튼을 누르면
         input데이터를 json으로 만들어 console.log에 출력하시오.
       */
+     $('#btn').click(function() {
+       console.log('Hello World');       //  출력 확인용
+       
+       var starBucksBtn = $('.form-wrapper').children();
+       for(var i = 0; i<starBucksBtn.length; i++) {
+         var value = $("#" + starBucksBtn[i].id).val();
+         console.log(starBucksBtn[i].id);
+         if(value === '') {
+           console.log('내용을 확인해주세요!');
+           return false;
+         }
+         if(starBucksBtn[i].id === '')
+       }
+       submitData();
+     })
+
+         // 문제 1. 
+        // 회원가입 버튼 눌렀을 때, 빈칸 혹은 체크하지 못한 부분이 있다면
+        // '내용을 확인해주세요!'하는 alert을 보여주고 focus 하시오.
+
+        // 문제 2.
+        // 연락처에 '-'를 작성하면 회원가입 버튼을 눌렀을 때 제거하시오.
+        // ex) 010-4097-0823 -> 01040970823
+        function doCheckPhoneNumber(cellPhoneNumber) {
+          var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+          var isPhoneNumber =regExp.test(cellPhoneNumber);
+          return isPhoneNumber;
+
+        }
+
+        // 문제 3.
+        // 회원이름과 닉네임은 20글자 이하고 한글만 사용할 수 있습니다.
+
+
+        // 문제 4. 
+        // 모든 조건을 만족하고 회원가입 버튼을 누르면
+        // input데이터를 json으로 만들어 console.log에 출력하시오.
+
+
+        // JSON 
+        function submitData() {
+          var starBucksData = { };
+          // 핸드폰 번호
+          starBucksData.cellPhoneNumber = $('#phoneNumber').val();
+          console.log(starBucksData);
+        }
     </script>
   </body>
 </html>
