@@ -47,8 +47,9 @@
             var jsonData = { };
             for (var i = 0; i <inputBoxChildren.length; i++) {
             var elementId = inputBoxChildren[i].id;
+            // ?
             var elementValue = $('#' + elementId).val().trim();
-            //  if 쪽에 있는 elementId 와 elementValue if 뭔 차이인지?
+        
             if(elementValue == '') {
                 ++count;
                 alert('빈칸이 있어요!');
