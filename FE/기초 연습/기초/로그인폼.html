@@ -39,8 +39,10 @@
      return false;
    }
    var inputChildren = $('.input-box').children();
+  //  JSON?
    var jsonData = {};
    for(var i = 0; i <inputChildren.length; i++) {
+    //  ?
      var elementID = inputChildren[i].id;
      var elementValue = $('#' + elementID).val().trim();
      if(elementValue === '') {
@@ -55,9 +57,12 @@
        $('#' + elementID).focus();
        return false;
      }
+    //  ?
      jsonData[elementID] = elementValue;
 
    }
+  //  ?
+
    doSubmit(jsonData);
  });
  function doCheckEmail(email) {
@@ -66,6 +71,7 @@
           var isEmail = regEmail.test(email);
           return isEmail;
  }
+//  JSON?
  function doCheckEmail(jsonData) {
    console.log(doCheckEmail.jsonData);
  }
