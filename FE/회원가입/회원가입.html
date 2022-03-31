@@ -11,10 +11,18 @@
     <div class="container">
       <div class="form-wrapper">
         <h3>스똬벅스 회원가입</h3>
-        <input id = "userName"  type="text" placeholder="회원이름을 입력해주세요..." />
-        <input id = "userNickName"  type="text" placeholder="사용할 닉네임을 입력해주세요..." />
+        <input id="userName" type="" placeholder="회원이름을 입력해주세요..." />
+        <input
+          id="userName"
+          type=""
+          placeholder="사용할 닉네임을 입력해주세요..."
+        />
         <div class="email-box">
-          <input id ="email" type="text" placeholder="이메일을 입력해주세요..." />
+          <input
+            id="email"
+            type="text"
+            placeholder="이메일을 입력해주세요..."
+          />
           <span>@</span>
           <select id="emailList">
             <option value="none" selected>직접입력</option>
@@ -24,16 +32,17 @@
             <option value="nate">nate.com</option>
           </select>
         </div>
-        <input id="phone"
+        <input
+          id="call"
           type="text"
           placeholder="연락처를 입력해주세요...(번호만 입력하세요)"
         />
         <div class="question-box">
           <span>회원가입에 동의하나요?</span>
-          <input  id = "isAgree" type="checkbox" />
+          <input id="checkbox" type="checkbox" />
         </div>
         <div class="join-btn">
-          <button id="join" type="button">회원 가입</button>
+          <button id="button" type="button">회원 가입</button>
         </div>
       </div>
     </div>
@@ -43,7 +52,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      /* 문제 1. 
+      /* 문제 1.
         회원가입 버튼 눌렀을 때, 빈칸 혹은 체크하지 못한 부분이 있다면
         '내용을 확인해주세요!'하는 alert을 보여주고 focus 하시오.
         문제 2.
@@ -51,106 +60,37 @@
         ex) 010-4097-0823 -> 01040970823
         문제 3.
         회원이름과 닉네임은 20글자 이하고 한글만 사용할 수 있습니다.
-        문제 4. 
+        문제 4.
         모든 조건을 만족하고 회원가입 버튼을 누르면
         input데이터를 json으로 만들어 console.log에 출력하시오.
       */
+    
+         
+          if (userName.length > 20) {
+          alert("길이가 초과되었습니다.");
+          return false;
+
+         // json 나타내는 방법.
+         var jsonData = {};
+        jsonData.userName = userName;
+        jsonData.userNickName = userNickName;
+        jsonData.userEmail = userEmail + "@" + userEmailList;
+        jsonData.userNumber = userNumber;
+        console.log(jsonData);
+      }
    
-   
-      //  오류 뜸
-    //  $('#btn').click(function() {
-    //    console.log('Hello World');       //  출력 확인용
-       
-    //    var starBucksBtn = $('.form-wrapper').children();
-    //    for(var i = 0; i<starBucksBtn.length; i++) {
-    //      var value = $("#" + starBucksBtn[i].id).val();
-    //      console.log(starBucksBtn[i].id);
-    //      if(value === '') {
-    //        console.log('내용을 확인해주세요!');
-    //        return false;
-    //      }
-    //      if(starBucksBtn[i].id === '');
-    //     }
-    //     submitData();
-    //   })
-    // function btn() {
-    //   var checkName = $('.form-wrapper').val().trim();
-    //   if(checkName == '') {
-    //     alert('내용을 확인해주세요!')
-    //     $('.form-wrapper').focus();
-    //     return false;
-       
-    //   }
-    // }
 
-         // 문제 1. 
-        // 회원가입 버튼 눌렀을 때, 빈칸 혹은 체크하지 못한 부분이 있다면
-        // '내용을 확인해주세요!'하는 alert을 보여주고 focus 하시오.
-        $('#join').click(function() {
-          var jsonParam ={ };
-            // input 관련 js  
-  var formWrapper = $(".form-wrapper").children();
-  console.log(formWrapper);
-  for(var i = 1; i<formWrapper.length; i++ ) {
-  var elementID = formWrapper[i].id;
-  var elementValue = '';
-  if( formWrapper[i].nodeName === 'INPUT') {
-    var element = $('#'+elementID).val();
-    if(elementValue === '') {
-      alert('내용을 확인해주세요!');
-      $('#'+elementID).focus();
-      // 자바 스크립트 빨리 종료 시키기 위해서 하는 것
-      return false;
-    }
-  }
-  if((formWrapper[i].id === 'userName' || formWrapper[i].id === 'nickname')
-  && elementValue.length >= 20){
-    alert('글자수 제한');
-    return false;
-  }
-  if((formWrapper[i].id === 'userName' || formWrapper[i].id === 'nickname')
-  )
-  if(formWrapper[i].id === 'phone') 
+      function CheckName(name) {
+        var regName = /^[가-힣]+$/;
+        var isName = regName.test(name);
+        return isName;
+      }
 
-  var email = $('#email').val().trim();
-  
-
-  jsonParam.email = email+'@'+emailCompany;
-  console.log('helloworld');s
-  doJoin(jsonParam);
-  )
-}
-
-});
-
-        // 문제 2.
-        // 연락처에 '-'를 작성하면 회원가입 버튼을 눌렀을 때 제거하시오.
-        // ex) 010-4097-0823 -> 01040970823
-            //  오류 뜸
-        // function doCheckPhoneNumber(cellPhoneNumber) {
-        //   var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
-        //   var isPhoneNumber =regExp.test(cellPhoneNumber);
-        //   return isPhoneNumber;
-
-        // }
-
-        // 문제 3.
-        // 회원이름과 닉네임은 20글자 이하고 한글만 사용할 수 있습니다.
-     
-      
-
-        // 문제 4. 
-        // 모든 조건을 만족하고 회원가입 버튼을 누르면
-        // input데이터를 json으로 만들어 console.log에 출력하시오.
-
-            //  오류 뜸
-        // JSON 
-        // function submitData() {
-        //   var starBucksData = { };
-        //   // 핸드폰 번호
-        //   starBucksData.cellPhoneNumber = $('#phoneNumber').val();
-        //   console.log(starBucksData);
-        // }
+      function CheckNickName(nickName) {
+        var regNickName = /^[가-힣]+$/;
+        var isNickName = regNickName.test(nickName);
+        return isNickName;
+      }
     </script>
   </body>
 </html>
