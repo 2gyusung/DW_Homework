@@ -43,9 +43,9 @@
         var inputBoxChildren = $('.input-box').children();
         var jsonData = {};
         for (var i = 0; i < inputBoxChildren.length; i++) {
-                              // ?
+                              // ? 질문
           var elementId = inputBoxChildren[i].id;
-                              // ?
+                              // ? 질문
           var elementValue = $('#' + elementId)
           // 빈칸 띄우기 제거
             .val()
@@ -65,9 +65,10 @@
             return false;
           }
           // 이해 못함
-          
+          // 질문
           jsonData[elementId] = elementValue;
         } //end for
+        // 질문
         doSubmit(jsonData);
       });
       
