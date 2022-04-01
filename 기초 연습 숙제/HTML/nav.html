@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet"> 
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/a546132dc8.js" crossorigin="anonymous"></script>
+</head>
+<!-- 질문 1 : 아이콘이 안된다 (검색 하고 했는데 X)-->
+<!-- 질문 2 : js에서 active부분 이해 못함, CSS에서  .navbar_menu.active,
+  .navbar_icons.active 왜 추가 했는지? -->
+<!-- tip : 레이아웃 구조 파악하기(박스 구조) -->
+<body>
+  
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <i class="fa-brands fa-accusoft"></i>
+        <!-- fontAwesome -->
+        <a href="#">로고로고</a>
+      </div>
+
+      <ul class="navbar_menu">
+        <!-- (li>a*5) -->
+        <li><a href="#">home</a></li>
+        <li><a href="#">gallery</a></li>
+        <li><a href="#">weddings</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Bookings</a></li>
+      </ul>
+      
+    
+     <ul class="navbar_icons">
+      <li><i class="fa-brands fa-twitter"></i></li>
+      <li><i class="fa-brands fa-facebook"></i></li>
+   
+    </ul>
+    <a href="#" class="navbar_toogleBtn">
+      <i class="fa-solid fa-bars"></i>
+    </a>
+    </nav>
+  </div>
+</body>
+</html>
