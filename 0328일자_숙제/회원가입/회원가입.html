@@ -52,6 +52,8 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      // var let 차이점 : 중복
+      
       /* 문제 1.
         회원가입 버튼 눌렀을 때, 빈칸 혹은 체크하지 못한 부분이 있다면
         '내용을 확인해주세요!'하는 alert을 보여주고 focus 하시오.
@@ -66,31 +68,31 @@
       */
     
          
-          if (userName.length > 20) {
-          alert("길이가 초과되었습니다.");
-          return false;
+      //     if (userName.length > 20) {
+      //     alert("길이가 초과되었습니다.");
+      //     return false;
 
-         // json 나타내는 방법.
-         var jsonData = {};
-        jsonData.userName = userName;
-        jsonData.userNickName = userNickName;
-        jsonData.userEmail = userEmail + "@" + userEmailList;
-        jsonData.userNumber = userNumber;
-        console.log(jsonData);
-      }
+      //    // json 나타내는 방법.
+      //    var jsonData = {};
+      //   jsonData.userName = userName;
+      //   jsonData.userNickName = userNickName;
+      //   jsonData.userEmail = userEmail + "@" + userEmailList;
+      //   jsonData.userNumber = userNumber;
+      //   console.log(jsonData);
+      // }
    
 
-      function CheckName(name) {
-        var regName = /^[가-힣]+$/;
-        var isName = regName.test(name);
-        return isName;
-      }
+      // function CheckName(name) {
+      //   var regName = /^[가-힣]+$/;
+      //   var isName = regName.test(name);
+      //   return isName;
+      // }
 
-      function CheckNickName(nickName) {
-        var regNickName = /^[가-힣]+$/;
-        var isNickName = regNickName.test(nickName);
-        return isNickName;
-      }
+      // function CheckNickName(nickName) {
+      //   var regNickName = /^[가-힣]+$/;
+      //   var isNickName = regNickName.test(nickName);
+      //   return isNickName;
+      // }
     </script>
   </body>
 </html>
