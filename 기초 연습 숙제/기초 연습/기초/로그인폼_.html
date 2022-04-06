@@ -50,13 +50,15 @@
           // 빈칸 띄우기 제거
             .val()
             .trim();
-          if (elementValue === '') {
+          
+            if (elementValue === '') {
             ++count;
             alert('빈칸이 있어요!');
             // id 값을 포커스?
             $('#' + elementId).focus();
             return false;
           }
+              //    ?                            
           if (elementId === 'email' && !doCheckEmail(elementValue)) {
             ++count;
             alert('이메일 형식이 아닙니다.');
