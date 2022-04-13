@@ -41,11 +41,6 @@
         </div>
     </div>
 </div>
-<script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"
-></script>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -70,7 +65,7 @@
            //  1. 가입하기 버튼을 눌렀을 때 모든 input박스에 값이 있어야 함.
            $('#btnJoin').click(function(){
             var joinRow = $('.join-row span').children();
-            var password = null;
+            var password = null; // ?
             for(var i=0; i<joinRow.length; i++){
                 if(joinRow[i].className === 'int'){ // ?
                     var element = $('#'+joinRow[i].id).val();
