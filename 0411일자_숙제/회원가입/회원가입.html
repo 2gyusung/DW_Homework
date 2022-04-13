@@ -69,6 +69,12 @@
          for(var i = 0; i<inputBox.length; i++) {
            var signValue = $('#' + inputBox[i].id).val.trim();
            console.log(inputBox[i].id)
+
+           //
+           if(userId !== '' && userPassword !== ''){
+          alert('로그인 완료');
+          return true;
+        }
          }
        } )
       //  2. 아이디는 5~20자의 영문 소문자, 숫자만 사용 가능합니다.
@@ -81,6 +87,7 @@
          $('#name').val('');
          
        }
+    //    3. 비밀번호와 비밀번호 재확인은 같아야 합니다.
        var name = $('name').val.trim();
        if(!checkName(name)) {
          alert('영문 소문자, 숫자만 사용 가능합니다')
